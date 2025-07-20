@@ -12,6 +12,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Message />
+      <div className="w-full h-dvh" />
     </div>
   );
 };

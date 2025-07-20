@@ -63,9 +63,9 @@ const Navbar = () => {
         />
         <button onClick={handleClick}>
           {mobileMenu ? (
-            <IoClose cursor={"pointer"} size={55} />
+            <IoClose cursor={"pointer"} size={55} color="black" />
           ) : (
-            <FaBarsStaggered size={40} cursor={"pointer"} />
+            <FaBarsStaggered size={40} cursor={"pointer"} color="black" />
           )}
         </button>
       </nav>
