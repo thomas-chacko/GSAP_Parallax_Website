@@ -1,6 +1,6 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
-import { TbMenu } from "react-icons/tb";
+import { FaBarsStaggered } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
 import nav1 from "../../public/images/nav1.jpeg";
@@ -17,7 +17,7 @@ const Navbar = () => {
   const navLinks = ["SHOP", "FIND IN STORES", "ABOUT US", "PROGRAMS"];
 
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [showMenu, setShowMenu] = useState(false); // control actual render
+  const [showMenu, setShowMenu] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState(0);
 
   const tl = useRef();
@@ -29,7 +29,7 @@ const Navbar = () => {
     } else {
       tl.current = gsap.timeline({
         onComplete: () => {
-          setShowMenu(false); // hide after animation
+          setShowMenu(false);
           setMobileMenu(false);
         },
       });
@@ -63,21 +63,11 @@ const Navbar = () => {
         />
         <button onClick={handleClick}>
           {mobileMenu ? (
-            <IoClose
-              cursor={"pointer"}
-              className="lg:bg-white lg:w-14 lg:h-14 rounded-full"
-              size={55}
-            />
+            <IoClose cursor={"pointer"} size={55} />
           ) : (
-            <TbMenu size={55} cursor={"pointer"} />
+            <FaBarsStaggered size={40} cursor={"pointer"} />
           )}
         </button>
-
-        {!isMobile && !isTablet && (
-          <button className="bg-white px-6 tracking-wide py-4 rounded-full font-[900] text-dark-brown cursor-pointer">
-            FIND IN STORIES
-          </button>
-        )}
       </nav>
       {showMenu && (
         <div
